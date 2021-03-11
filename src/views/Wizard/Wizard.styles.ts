@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 import { theme } from '../../utils/theme/theme'
 
+interface StepWrapperProps {
+    isCurrentStep: boolean
+    isCompleteStep: boolean
+}
+
 export const WizardWrapper = styled.div`
     margin-top: 20px;
 `
@@ -17,11 +22,14 @@ export const StepWrapper = styled.div`
     display: flex;
     flex-direction: column;
     height: 100%;
-    justify-content: flex-end;
+    justify-content: start;
+    padding-top: 25px;
 `
 
-export const Circle = styled.div`
-    background-color: ${theme.colors.darkBlue};
+export const Circle = styled.div<StepWrapperProps>`
+    background-color: ${theme.colors.stepperDisabled};
+    ${p => p.isCurrentStep && `background-color: ${theme.colors.darkBlue}`};
+    ${p => p.isCompleteStep && `background-color: ${theme.colors.primaryColor}`};
     display: flex;
     width: 5px;
     height: 5px;
@@ -32,8 +40,10 @@ export const Circle = styled.div`
     padding: 15px;
 `
 
-export const Line = styled.div`
-    background-color: ${theme.colors.darkBlue};
+export const Line = styled.div<StepWrapperProps>`
+    background-color: ${theme.colors.stepperDisabled};
+    ${p => p.isCurrentStep && `background-color: ${theme.colors.darkBlue}`};
+    ${p => p.isCompleteStep && `background-color: ${theme.colors.primaryColor}`};
     width: 30px;
     height: 5px;
     margin: auto 0;
@@ -47,12 +57,18 @@ export const Triangle = styled.div`
     border-right: 17px solid transparent;
     border-top: 7px solid transparent;
     border-left: 18px solid transparent;
-    border-bottom: 18px solid yellow;
+    border-bottom: 18px solid ${theme.colors.white};;
 `
 
 export const ContentWwapper = styled.div`
-    background-color: yellow;
+    background-color: ${theme.colors.white};;
     width: 100%;
     height: 300px;
 `
-     
+
+export const FooterWrapper = styled.div`
+    background-color: ${theme.colors.white};
+    border-top: 5px solid ${theme.colors.grey};
+    display: flex;
+    justify-content: space-between;
+`

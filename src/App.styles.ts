@@ -10,5 +10,5 @@ export const AppWrapper = styled.div`
 `
 
 export const AppContent = styled.div`
-  width: 1000px;
+  width: 950px;
 `
