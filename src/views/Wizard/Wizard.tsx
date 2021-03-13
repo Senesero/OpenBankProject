@@ -11,6 +11,9 @@ import {
   ContentWwapper,
   FooterWrapper,
 } from "./Wizard.styles";
+import { ReactComponent as SVG } from "../../assets/img/check.svg";
+import Text from "../components/Text/Text";
+import { theme } from "../../utils/theme/theme";
 
 interface Props {
   steps: Step[];
@@ -29,7 +32,7 @@ export const Wizard: React.FC<Props> = ({ steps }) => {
                 isCurrentStep={currrentStep === index}
                 isCompleteStep={currrentStep > index}
               >
-                {currrentStep <= index ? step.title : "Chk"}
+                {currrentStep <= index ? step.step : <SVG fill="white" />}
               </Circle>
               {currrentStep === index && <Triangle />}
             </StepWrapper>
@@ -42,7 +45,14 @@ export const Wizard: React.FC<Props> = ({ steps }) => {
           </>
         ))}
       </HeaderdWrapper>
-      <ContentWwapper>{steps[currrentStep].component}</ContentWwapper>
+      <ContentWwapper>
+        {steps[currrentStep].title && (
+          <Text isTitle inlineColor={theme.colors.lightBlue}>
+            {steps[currrentStep].title}
+          </Text>
+        )}
+        {steps[currrentStep].component}
+      </ContentWwapper>
       <FooterWrapper>
         <Button
           label="Cancelar"

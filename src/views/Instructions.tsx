@@ -17,9 +17,9 @@ class Instructions extends Component {
                   <p>Lo que pretendemos con la prueba es evaluar las capacidades técnicas respecto a un desarrollador web o front, especialmente en el area de React y aplicaciones SPA. Con esta prueba se pretende valorar muchos aspectos del stack tecnologico de un desarrollador del ambito web, como arquitectura, uso de patrones de diseño, maquetación, técnicas de programación, documentación, conocimentos de Javascript, HTML y CSS, entre otros. </p>
                   <h3>¿En que consiste?</h3>
                   <p>La prueba consiste en diseñar, maquetar y desarrollar desde cero un pequeño wizard que simule algo tan típico como la creación de una contraseña para un usuario. Lo que queremos que hagas es que plantees un wizard de unos 3 pasos en los que un usuario reciba información de que está a punto de crear una contraseña nueva, un formulario donde se le pidan una serie de datos para la creación de la contraseña y una página final de feedback de la operación.</p> */}
-          <h3>Desarrollo</h3>
+          {/* <h3>Desarrollo</h3> */}
           <ul>
-            <li>
+            {/* <li>
               <h4>1º Pantalla de información de la contraseña</h4>
               <Step1 />
               <p>
@@ -37,9 +37,9 @@ class Instructions extends Component {
                 edad y que acepta que tratemos sus datos según la politica de
                 protección de datos.
               </h5>
-            </li>
+            </li> */}
             <li>
-              <h4>2º Pantalla de creación de la contraseña</h4>
+              {/* <h4>2º Pantalla de creación de la contraseña</h4> */}
               <Step2 />
               <p>
                 En esta pantalla al usuario se le van a pedir los siguientes

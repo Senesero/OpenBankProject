@@ -23,7 +23,7 @@ export const StepWrapper = styled.div`
     flex-direction: column;
     height: 100%;
     justify-content: start;
-    padding-top: 25px;
+    padding-top: 20px;
 `
 
 export const Circle = styled.div<StepWrapperProps>`
@@ -31,8 +31,8 @@ export const Circle = styled.div<StepWrapperProps>`
     ${p => p.isCurrentStep && `background-color: ${theme.colors.darkBlue}`};
     ${p => p.isCompleteStep && `background-color: ${theme.colors.primaryColor}`};
     display: flex;
-    width: 5px;
-    height: 5px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
     justify-content: center;
     align-items: center;    
@@ -61,9 +61,9 @@ export const Triangle = styled.div`
 `
 
 export const ContentWwapper = styled.div`
-    background-color: ${theme.colors.white};;
+    background-color: ${theme.colors.white};
     width: 100%;
-    height: 300px;
+    padding: 30px 80px;
 `
 
 export const FooterWrapper = styled.div`

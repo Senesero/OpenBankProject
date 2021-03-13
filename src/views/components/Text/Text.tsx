@@ -1,12 +1,11 @@
 import React from "react";
-import { ColorsInterface } from "../../../utils/theme/colors";
-
-import { Line, TextWrapper } from "./Text.styles";
+import { Line, TextWrapper, Label } from "./Text.styles";
 
 interface Props {
   isTitle?: boolean;
   isSubtitle?: boolean;
   inlineColor?: string;
+  isSamll?: boolean;
 }
 
 const Text: React.FC<Props> = ({
@@ -14,13 +13,14 @@ const Text: React.FC<Props> = ({
   isTitle,
   isSubtitle,
   inlineColor,
+  isSamll,
 }) => (
-  <>
-    <TextWrapper isTitle={isTitle} isSubtitle={isSubtitle}>
+  <TextWrapper>
+    <Label isTitle={isTitle} isSubtitle={isSubtitle} isSamll={isSamll}>
       {children}
-    </TextWrapper>
+    </Label>
     {inlineColor && <Line inlineColor={inlineColor} />}
-  </>
+  </TextWrapper>
 );
 
 export default Text;

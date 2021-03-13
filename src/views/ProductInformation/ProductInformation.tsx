@@ -1,21 +1,39 @@
 import React from "react";
-import { theme } from "../../utils/theme/theme";
 import Text from "../components/Text/Text";
-import { ProductInformationWrapper } from "./ProductInformation.styles";
+import { IconsWrapper } from "./ProductInformation.styles";
+import { ReactComponent as GroupIcon } from "../../assets/img/group.svg";
+import { ReactComponent as GroupThreeIcon } from "../../assets/img/group-3.svg";
+import IconBlock from "./IconBlock/IconBlock";
 
 const ProductInformation: React.FC = () => {
+  const subtitleSection = (subTitle: string, text: string) => (
+    <div>
+      <Text isSubtitle>{subTitle}</Text>
+      <Text>{text}</Text>
+    </div>
+  );
+
   return (
-    <ProductInformationWrapper>
-      <Text isTitle inlineColor={theme.colors.orange}>
-        Crea tu Password Manager
-      </Text>
-      <Text isSubtitle>Cómo funciona</Text>
-      <Text>
-        En primer lugar, debes crear una contraseña diferente para sus
-        pertenencias electrónicas. No podrás recuperar tu contraseña, así que
-        recuérdala bien.
-      </Text>
-    </ProductInformationWrapper>
+    <>
+      <IconsWrapper>
+        <IconBlock
+          icon={<GroupIcon />}
+          text="Guarda aquí todas tus contraseñas, datos o cualquier información, olvida las notas de papel y las aplicaciones no protegidas"
+        />
+        <IconBlock
+          icon={<GroupThreeIcon />}
+          text="Crea tu clave maestra: solo tú podrás acceder a tus secretos con ella."
+        />
+      </IconsWrapper>
+      {subtitleSection(
+        "Cómo funciona",
+        "En primer lugar, debes crear una contraseña diferente para sus pertenencias electrónicas. No podrás recuperar tu contraseña, así que recuérdala bien"
+      )}
+      {subtitleSection(
+        "Qué datos puedes guardar",
+        "En primer lugar, debes crear una contraseña diferente para sus pertenencias electrónicas. No podrás recuperar tu contraseña, así que recuérdala bien."
+      )}
+    </>
   );
 };
 
