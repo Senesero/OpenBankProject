@@ -5,3 +5,7 @@ export const IconsWrapper = styled.div`
   width: 100%;
   justify-content: space-between;
 `
+
+export const PasswordWrapper = styled.div`
+  display: flex;
+`

@@ -8,7 +8,9 @@ import IconBlock from "./IconBlock/IconBlock";
 const ProductInformation: React.FC = () => {
   const subtitleSection = (subTitle: string, text: string) => (
     <div>
-      <Text isSubtitle>{subTitle}</Text>
+      <Text isSubtitle bold>
+        {subTitle}
+      </Text>
       <Text>{text}</Text>
     </div>
   );

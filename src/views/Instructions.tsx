@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // import OpenbankLogo from "../assets/img/key_openbank.png";
-import Step1 from "./ProductInformation/Step1";
+// import Step1 from "./ProductInformation/Step1";
 import Step2 from "./Form/Step2";
 import Step3 from "./Feedback/Step3";
 

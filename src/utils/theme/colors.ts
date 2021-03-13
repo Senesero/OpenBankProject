@@ -11,6 +11,8 @@ export interface ColorsInterface {
   stepperDisabled: string
   lightBlue: string
   orange: string
+  red: string
+  green: string
 }
 
 export const colors: ColorsInterface = {
@@ -25,4 +27,6 @@ export const colors: ColorsInterface = {
   stepperDisabled: '#788F9C',
   lightBlue: '#40c3df',
   orange: '#f78b50',
+  red: '#ff0000',
+  green: '#006400',
 }

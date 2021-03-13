@@ -40,17 +40,6 @@ export const Circle = styled.div<StepWrapperProps>`
     padding: 15px;
 `
 
-export const Line = styled.div<StepWrapperProps>`
-    background-color: ${theme.colors.stepperDisabled};
-    ${p => p.isCurrentStep && `background-color: ${theme.colors.darkBlue}`};
-    ${p => p.isCompleteStep && `background-color: ${theme.colors.primaryColor}`};
-    width: 30px;
-    height: 5px;
-    margin: auto 0;
-    justify-content: center;
-    align-items: center;
-`
-
 export const Triangle = styled.div`
     width: 0;
     height: 0;

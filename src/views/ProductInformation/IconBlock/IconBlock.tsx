@@ -1,5 +1,5 @@
 import React from "react";
-import { Label } from "../../components/Text/Text.styles";
+import Text from "../../components/Text/Text";
 import { ContentWrapper } from "./IconBlock.styles";
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 const IconBlock: React.FC<Props> = ({ icon, text }) => (
   <ContentWrapper>
     {icon}
-    <Label isSamll>{text}</Label>
+    <Text isSamll>{text}</Text>
   </ContentWrapper>
 );
 
