@@ -17,10 +17,18 @@ import { Line } from "../components/Line/Line.styles";
 
 interface Props {
   steps: Step[];
+  password: string;
+  updateLoading: (isLoading: boolean) => void;
+  apiResponseRequest: (password: string) => void;
 }
 
-export const Wizard: React.FC<Props> = ({ steps }) => {
-  const [currrentStep, setCurrrentStep] = React.useState(1);
+export const WizardComponent: React.FC<Props> = ({
+  steps,
+  password,
+  updateLoading,
+  apiResponseRequest,
+}) => {
+  const [currrentStep, setCurrrentStep] = React.useState(0);
 
   const getColor = (index: number): string => {
     if (currrentStep - 1 === index) {
@@ -76,10 +84,14 @@ export const Wizard: React.FC<Props> = ({ steps }) => {
         />
         <Button
           label="Siguiente >"
-          onClick={() =>
+          onClick={() => {
             currrentStep !== steps.length - 1 &&
-            setCurrrentStep(currrentStep + 1)
-          }
+              setCurrrentStep(currrentStep + 1);
+            if (currrentStep === 1) {
+              updateLoading(true);
+              apiResponseRequest(password);
+            }
+          }}
           disabled={currrentStep === steps.length - 1}
           primary
         />

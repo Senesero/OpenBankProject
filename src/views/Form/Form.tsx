@@ -5,7 +5,11 @@ import PasswordField from "../components/PasswordField/PasswordField";
 import Text from "../components/Text/Text";
 import { PasswordWrapper } from "./Form.styles";
 
-const Form: React.FC = () => {
+interface Props {
+  updatePassword: (password: string) => void;
+}
+
+const FormComponent: React.FC<Props> = ({ updatePassword }) => {
   const [password, setPassword] = React.useState("");
   const [erroPassword, setErroPassword] = React.useState("");
   const [confirmationPassword, setConfirmationPassword] = React.useState("");
@@ -36,7 +40,6 @@ const Form: React.FC = () => {
       }
 
       if (withError) {
-        console.log(error);
         setErroPassword(error);
       } else {
         setErroPassword("");
@@ -44,6 +47,7 @@ const Form: React.FC = () => {
     } else {
       setErroPassword("");
     }
+    updatePassword(password);
   }, [password]);
 
   React.useEffect(() => {
@@ -91,4 +95,4 @@ const Form: React.FC = () => {
   );
 };
 
-export default Form;
+export default FormComponent;

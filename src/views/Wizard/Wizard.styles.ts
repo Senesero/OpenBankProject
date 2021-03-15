@@ -7,6 +7,7 @@ interface StepWrapperProps {
 }
 
 export const WizardWrapper = styled.div`
+    width: 100%;
     margin-top: 20px;
 `
 
@@ -51,7 +52,6 @@ export const Triangle = styled.div`
 
 export const ContentWwapper = styled.div`
     background-color: ${theme.colors.white};
-    width: 100%;
     padding: 30px 80px;
 `
 

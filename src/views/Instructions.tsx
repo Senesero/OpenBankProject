@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 // import OpenbankLogo from "../assets/img/key_openbank.png";
 // import Step1 from "./ProductInformation/Step1";
-import Step2 from "./Form/Step2";
+// import Step2 from "./Form/Step2";
 import Step3 from "./Feedback/Step3";
 
 import "./Instructions.scss";
@@ -38,10 +38,10 @@ class Instructions extends Component {
                 protección de datos.
               </h5>
             </li> */}
-            <li>
-              {/* <h4>2º Pantalla de creación de la contraseña</h4> */}
-              <Step2 />
-              <p>
+            {/* <li> */}
+            {/* <h4>2º Pantalla de creación de la contraseña</h4> */}
+            {/* <Step2 /> */}
+            {/* <p>
                 En esta pantalla al usuario se le van a pedir los siguientes
                 datos en un formulario.
               </p>
@@ -59,10 +59,10 @@ class Instructions extends Component {
                 mostrando un error asociado a cada input. Se debe validar
                 correctamente que sea una contraseña correcta y que coincidan
                 ambas.
-              </h5>
-            </li>
+              </h5> */}
+            {/* </li> */}
             <li>
-              <h4>3º Pantalla de feedback</h4>
+              {/* <h4>3º Pantalla de feedback</h4> */}
               <Step3 isSuccess />
               <Step3 />
               <p>

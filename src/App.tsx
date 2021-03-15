@@ -3,11 +3,11 @@ import { AppContent, AppWrapper } from "./App.styles";
 
 import "./App.styles.ts";
 import { Step } from "./model/models";
-import Feedback from "./views/Feedback/Feedback";
-import Form from "./views/Form/Form";
+import { Feedback } from "./views/Feedback/FeedbackContainer";
+import { Form } from "./views/Form/FormContainer";
 import Instructions from "./views/Instructions";
 import ProductInformation from "./views/ProductInformation/ProductInformation";
-import { Wizard } from "./views/Wizard/Wizard";
+import { Wizard } from "./views/Wizard/WizardContainer";
 
 const App: React.FC = () => {
   const steps: Step[] = [
