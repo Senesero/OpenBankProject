@@ -1,15 +1,17 @@
 import { actionsEnums } from '../common/actionsEnums';
 
 export interface WizardProfileState {
-    isLoading: boolean;
-    password: string;
-    apiResponse: number;
+  isLoading: boolean;
+  password: string;
+  apiResponse: number;
+  acceptConditions: boolean;
 }
 
 const defaultWizardState: () => WizardProfileState = () => ({
   isLoading: false,
   password: '',
   apiResponse: 0,
+  acceptConditions: false,
 });
 
 export const wizardReducer = (state = defaultWizardState(), action) => {
@@ -20,6 +22,8 @@ export const wizardReducer = (state = defaultWizardState(), action) => {
       return handleUpdateApiResponse(state, action.payload);
     case actionsEnums.UPDATE_PASSWORD:
       return handleUpdatePassword(state, action.payload);
+    case actionsEnums.UPDATE_ACCEPT_CONDITIONS:
+      return handleUpdateAcceptConditions(state, action.payload);
   }
 
   return state;
@@ -43,5 +47,12 @@ const handleUpdateApiResponse = (state: WizardProfileState, apiResponse: number)
   return {
     ...state,
     apiResponse,
+  };
+}
+
+const handleUpdateAcceptConditions = (state: WizardProfileState, acceptConditions: boolean) => {
+  return {
+    ...state,
+    acceptConditions,
   };
 }

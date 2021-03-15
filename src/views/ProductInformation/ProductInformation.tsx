@@ -1,11 +1,20 @@
 import React from "react";
-import Text from "../components/Text/Text";
+import Text from "../../components/Text/Text";
 import { IconsWrapper } from "./ProductInformation.styles";
 import { ReactComponent as GroupIcon } from "../../assets/img/group.svg";
 import { ReactComponent as GroupThreeIcon } from "../../assets/img/group-3.svg";
 import IconBlock from "./IconBlock/IconBlock";
+import CheckField from "../../components/CheckField/CheckField";
 
-const ProductInformation: React.FC = () => {
+interface Props {
+  acceptConditions: boolean;
+  updateAcceptConditions: (acceptConditions: boolean) => void;
+}
+
+const ProductInformationComponent: React.FC<Props> = ({
+  acceptConditions,
+  updateAcceptConditions,
+}) => {
   const subtitleSection = (subTitle: string, text: string) => (
     <div>
       <Text isSubtitle bold>
@@ -35,8 +44,12 @@ const ProductInformation: React.FC = () => {
         "Qué datos puedes guardar",
         "En primer lugar, debes crear una contraseña diferente para sus pertenencias electrónicas. No podrás recuperar tu contraseña, así que recuérdala bien."
       )}
+      <CheckField
+        title="Es mayor de eadad y que acepta que tratemos sus datos según la politica de protección de datos."
+        onClick={() => updateAcceptConditions(!acceptConditions)}
+      />
     </>
   );
 };
 
-export default ProductInformation;
+export default ProductInformationComponent;

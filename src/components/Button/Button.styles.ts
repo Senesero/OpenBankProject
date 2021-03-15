@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { theme } from '../../../utils/theme/theme'
+import { theme } from '../../utils/theme/theme'
 
 interface Props {
   disabled?: boolean
@@ -7,7 +7,7 @@ interface Props {
   secondary?: boolean
 }
 
-export const ButtonRaw = styled.button<Props>`  
+export const ButtonRaw = styled.input<Props>`  
   ${p => p.disabled ? `
     cursor: not-allowed;
   ` : `

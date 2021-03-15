@@ -12,14 +12,37 @@ class Instructions extends Component {
     return (
       <div className="App">
         <main className="App-content">
-          {/* <h1>Bienvenid@ al test de <img src={OpenbankLogo} className="App-header-logo" alt={"openbank-logo"} /></h1>
-                  <h3>Objetivo </h3>
-                  <p>Lo que pretendemos con la prueba es evaluar las capacidades técnicas respecto a un desarrollador web o front, especialmente en el area de React y aplicaciones SPA. Con esta prueba se pretende valorar muchos aspectos del stack tecnologico de un desarrollador del ambito web, como arquitectura, uso de patrones de diseño, maquetación, técnicas de programación, documentación, conocimentos de Javascript, HTML y CSS, entre otros. </p>
-                  <h3>¿En que consiste?</h3>
-                  <p>La prueba consiste en diseñar, maquetar y desarrollar desde cero un pequeño wizard que simule algo tan típico como la creación de una contraseña para un usuario. Lo que queremos que hagas es que plantees un wizard de unos 3 pasos en los que un usuario reciba información de que está a punto de crear una contraseña nueva, un formulario donde se le pidan una serie de datos para la creación de la contraseña y una página final de feedback de la operación.</p> */}
+          {/* <h1>
+            Bienvenid@ al test de{" "}
+            <img
+              src={OpenbankLogo}
+              className="App-header-logo"
+              alt={"openbank-logo"}
+            />
+          </h1>
+          <h3>Objetivo </h3>
+          <p>
+            Lo que pretendemos con la prueba es evaluar las capacidades técnicas
+            respecto a un desarrollador web o front, especialmente en el area de
+            React y aplicaciones SPA. Con esta prueba se pretende valorar muchos
+            aspectos del stack tecnologico de un desarrollador del ambito web,
+            como arquitectura, uso de patrones de diseño, maquetación, técnicas
+            de programación, documentación, conocimentos de Javascript, HTML y
+            CSS, entre otros.{" "}
+          </p>
+          <h3>¿En que consiste?</h3>
+          <p>
+            La prueba consiste en diseñar, maquetar y desarrollar desde cero un
+            pequeño wizard que simule algo tan típico como la creación de una
+            contraseña para un usuario. Lo que queremos que hagas es que
+            plantees un wizard de unos 3 pasos en los que un usuario reciba
+            información de que está a punto de crear una contraseña nueva, un
+            formulario donde se le pidan una serie de datos para la creación de
+            la contraseña y una página final de feedback de la operación.
+          </p> */}
           {/* <h3>Desarrollo</h3> */}
-          <ul>
-            {/* <li>
+          {/* <ul> */}
+          {/* <li>
               <h4>1º Pantalla de información de la contraseña</h4>
               <Step1 />
               <p>
@@ -38,10 +61,10 @@ class Instructions extends Component {
                 protección de datos.
               </h5>
             </li> */}
-            {/* <li> */}
-            {/* <h4>2º Pantalla de creación de la contraseña</h4> */}
-            {/* <Step2 /> */}
-            {/* <p>
+          {/* <li>
+              <h4>2º Pantalla de creación de la contraseña</h4>
+              <Step2 />
+              <p>
                 En esta pantalla al usuario se le van a pedir los siguientes
                 datos en un formulario.
               </p>
@@ -59,10 +82,10 @@ class Instructions extends Component {
                 mostrando un error asociado a cada input. Se debe validar
                 correctamente que sea una contraseña correcta y que coincidan
                 ambas.
-              </h5> */}
-            {/* </li> */}
-            <li>
-              {/* <h4>3º Pantalla de feedback</h4> */}
+              </h5>
+            </li> */}
+          {/* <li>
+              <h4>3º Pantalla de feedback</h4>
               <Step3 isSuccess />
               <Step3 />
               <p>
@@ -80,15 +103,15 @@ class Instructions extends Component {
                 tanto un KO como un OK, de manera dinamica, de manera que, sea
                 parametrizable en base al resultado de la creación.
               </h5>
-            </li>
-          </ul>
-          <h3>Requisitos</h3>
+            </li> */}
+          {/* </ul> */}
+          {/* <h3>Requisitos</h3>
           <p>
             Los requisitos que se van a tener en cuenta para la evaluación de la
             prueba son:
-          </p>
-          <ul>
-            <li>
+          </p> */}
+          {/* <ul> */}
+          {/* <li>
               Tiene que estar maquetada semánticamente correcta, con etiquetas
               de HTML5 y layouts actuales.
             </li>
@@ -96,22 +119,22 @@ class Instructions extends Component {
               Se puede renombrar, quitar o añadir cualquier recurso, fichero,
               asset que se crea necesario para mejorar o embellecer la prueba.
             </li>
-            <li>La iconografia puede obtenerse de donde guste</li>
-            <li>
-              Nice to haves a tener en cuenta
-              <ul>
-                <li>Estructura del proyecto</li>
+            <li>La iconografia puede obtenerse de donde guste</li> */}
+          {/* <li> */}
+          {/* Nice to haves a tener en cuenta */}
+          {/* <ul> */}
+          {/* <li>Estructura del proyecto</li>
                 <li>Control de la UI durante las llamadas asíncronas</li>
                 <li>Generalización de componentes y utilidades</li>
                 <li>Uso de buenas practicas de programación</li>
-                <li>Metodologias en hojas de estilos</li>
-                <li>Sistema de traducción</li>
-                <li>Rendimiento</li>
-              </ul>
-            </li>
-          </ul>
-          <h3>Recursos</h3>
-          <p>
+                <li>Metodologias en hojas de estilos</li> */}
+          {/* <li>Sistema de traducción</li> */}
+          {/* <li>Rendimiento</li> */}
+          {/* </ul> */}
+          {/* </li> */}
+          {/* </ul> */}
+          {/* <h3>Recursos</h3> */}
+          {/* <p>
             Se provee un proyecto vacío donde se espera que el desarrollador
             complete la lógica. Ademas se provee de un base.scss con los colores
             corporativos e imágenes para completar los flujos. Todo esto es de
@@ -128,7 +151,14 @@ class Instructions extends Component {
           <h4 className="bye-bye">
             Sin más que añadir, ¡mucha suerte! y cualquier duda, mandanos tus
             dudas al correo que te han dado. =)
-          </h4>
+          </h4> */}
+          <ul>
+            <li>Sistema de traducción</li>
+            <li>Responsive</li>
+            <li>Test</li>
+            <li></li>
+            <li></li>
+          </ul>
         </main>
       </div>
     );

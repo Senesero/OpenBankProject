@@ -1,5 +1,5 @@
 import React from "react";
-import Text from "../../components/Text/Text";
+import Text from "../../../components/Text/Text";
 import { ContentWrapper } from "./IconBlock.styles";
 
 interface Props {

@@ -11,6 +11,7 @@ interface Props {
 const mapStateToProps = (state: State & Props) => {
   return {
     password: state.wizardReducer.password,
+    acceptConditions: state.wizardReducer.acceptConditions,
   };
 };
 

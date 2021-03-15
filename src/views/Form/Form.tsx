@@ -1,8 +1,8 @@
 import React from "react";
 import { containCapitalLetters, containNumber } from "../../utils/strings";
-import ClueField from "../components/ClueField/ClueField";
-import PasswordField from "../components/PasswordField/PasswordField";
-import Text from "../components/Text/Text";
+import ClueField from "../../components/ClueField/ClueField";
+import PasswordField from "../../components/PasswordField/PasswordField";
+import Text from "../../components/Text/Text";
 import { PasswordWrapper } from "./Form.styles";
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 
 const FormComponent: React.FC<Props> = ({ updatePassword }) => {
   const [password, setPassword] = React.useState("");
-  const [erroPassword, setErroPassword] = React.useState("");
+  const [errorPassword, setErrorPassword] = React.useState("");
   const [confirmationPassword, setConfirmationPassword] = React.useState("");
   const [
     errorConfirmationPassword,
@@ -40,22 +40,30 @@ const FormComponent: React.FC<Props> = ({ updatePassword }) => {
       }
 
       if (withError) {
-        setErroPassword(error);
+        setErrorPassword(error);
+        updatePassword("");
       } else {
-        setErroPassword("");
+        setErrorPassword("");
+        if (!errorConfirmationPassword) {
+          updatePassword(password);
+        }
       }
     } else {
-      setErroPassword("");
+      setErrorPassword("");
+      updatePassword(password);
     }
-    updatePassword(password);
   }, [password]);
 
   React.useEffect(() => {
     if (confirmationPassword.length > 0) {
       if (confirmationPassword !== password) {
         setErrorConfirmationPassword("Las contraseñas no coinciden");
+        updatePassword("");
       } else {
         setErrorConfirmationPassword("");
+        if (!errorPassword) {
+          updatePassword(password);
+        }
       }
     }
   }, [password, confirmationPassword]);
@@ -72,7 +80,7 @@ const FormComponent: React.FC<Props> = ({ updatePassword }) => {
           title="Crea tu Contraseña Maestra"
           placeholder="Introduce tu contraseña"
           setInputValue={setPassword}
-          setError={erroPassword}
+          setError={errorPassword}
         />
         <PasswordField
           title="Repite tu Contraseña Maestra"

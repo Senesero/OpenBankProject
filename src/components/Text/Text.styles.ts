@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { theme } from '../../../utils/theme/theme'
-import { ReactComponent as Info } from "../../../assets/img/info.svg";
+import { theme } from '../../utils/theme/theme'
+import { ReactComponent as Info } from "../../assets/img/info.svg";
 
 interface Props {
   isTitle?: boolean

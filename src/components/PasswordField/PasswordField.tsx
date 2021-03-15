@@ -6,10 +6,10 @@ import {
   InputRaw,
   IconWrapper,
 } from "./PasswordField.styles";
-import { ReactComponent as EyeIcon } from "../../../assets/img/eye.svg";
-import { ReactComponent as CrossOutEyeIcon } from "../../../assets/img/cross-out-eye.svg";
-import { theme } from "../../../utils/theme/theme";
-import { containCapitalLetters, containNumber } from "../../../utils/strings";
+import { ReactComponent as EyeIcon } from "../../assets/img/eye.svg";
+import { ReactComponent as CrossOutEyeIcon } from "../../assets/img/cross-out-eye.svg";
+import { theme } from "../../utils/theme/theme";
+import { containCapitalLetters, containNumber } from "../../utils/strings";
 import { Line } from "../Line/Line.styles";
 
 interface Props {
@@ -54,6 +54,7 @@ const PasswordField: React.FC<Props> = ({
           }}
           type={isShowedPassword ? "text" : "password"}
           maxLength={24}
+          required
         />
         <IconWrapper onClick={() => setIsShowedPassword(!isShowedPassword)}>
           {isShowedPassword ? <CrossOutEyeIcon /> : <EyeIcon />}

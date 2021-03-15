@@ -16,6 +16,11 @@ export const updateApiResponse = (apiResponse : number) => ({
     payload : apiResponse,  
 });
 
+export const updateAcceptConditions = (acceptConditions: boolean) => ({
+  type: actionsEnums.UPDATE_ACCEPT_CONDITIONS,
+  payload: acceptConditions,
+})
+
 export const apiResponseRequest = (password: string) => (dispatch) => {
   const promise = submitForm(password);
 

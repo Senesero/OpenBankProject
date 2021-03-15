@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 import { theme } from '../../utils/theme/theme'
+import Text from "../../components/Text/Text";
 
 interface StepWrapperProps {
     isCurrentStep: boolean
     isCompleteStep: boolean
 }
 
-export const WizardWrapper = styled.div`
+export const WizardWrapper = styled.form`
     width: 100%;
     margin-top: 20px;
 `
@@ -60,4 +61,15 @@ export const FooterWrapper = styled.div`
     border-top: 5px solid ${theme.colors.grey};
     display: flex;
     justify-content: space-between;
+`
+
+export const ErrorTextWrapper = styled.div`
+    background-color: ${theme.colors.primaryColor};
+    width: 500px;
+    display: flex;
+    justify-content: center;
+`
+
+export const ErrorText = styled(Text)`
+    padding: 5px 20px;
 `

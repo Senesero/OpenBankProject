@@ -1,6 +1,6 @@
 import { CircularProgress } from "@material-ui/core";
 import React from "react";
-import Text from "../components/Text/Text";
+import Text from "../../components/Text/Text";
 import {
   ContentWrapper,
   IconWrapper,
