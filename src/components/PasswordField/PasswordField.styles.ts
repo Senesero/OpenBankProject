@@ -1,10 +1,18 @@
 import styled from 'styled-components'
+import { theme } from '../../utils/theme/theme'
 
 export const ComponentWrapper = styled.div`
   width: 250px;
   margin-top: 20px;
-  margin-right: 50px;
   margin-bottom: 20px;
+
+  ${() => theme.media.onDesktop`    
+    margin-right: 50px;
+  `}
+
+  ${() => theme.media.onMobile`
+    width: 100%;
+  `}
 `
 
 export const InputWrapper = styled.div`

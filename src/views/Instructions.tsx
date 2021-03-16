@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-// import OpenbankLogo from "../assets/img/key_openbank.png";
-// import Step1 from "./ProductInformation/Step1";
-// import Step2 from "./Form/Step2";
+import OpenbankLogo from "../assets/img/key_openbank.png";
+import Step1 from "./ProductInformation/Step1";
+import Step2 from "./Form/Step2";
 import Step3 from "./Feedback/Step3";
 
 import "./Instructions.scss";
@@ -12,7 +12,7 @@ class Instructions extends Component {
     return (
       <div className="App">
         <main className="App-content">
-          {/* <h1>
+          <h1>
             Bienvenid@ al test de{" "}
             <img
               src={OpenbankLogo}
@@ -39,10 +39,10 @@ class Instructions extends Component {
             información de que está a punto de crear una contraseña nueva, un
             formulario donde se le pidan una serie de datos para la creación de
             la contraseña y una página final de feedback de la operación.
-          </p> */}
-          {/* <h3>Desarrollo</h3> */}
-          {/* <ul> */}
-          {/* <li>
+          </p>
+          <h3>Desarrollo</h3>
+          <ul>
+            <li>
               <h4>1º Pantalla de información de la contraseña</h4>
               <Step1 />
               <p>
@@ -60,8 +60,8 @@ class Instructions extends Component {
                 edad y que acepta que tratemos sus datos según la politica de
                 protección de datos.
               </h5>
-            </li> */}
-          {/* <li>
+            </li>
+            <li>
               <h4>2º Pantalla de creación de la contraseña</h4>
               <Step2 />
               <p>
@@ -83,8 +83,8 @@ class Instructions extends Component {
                 correctamente que sea una contraseña correcta y que coincidan
                 ambas.
               </h5>
-            </li> */}
-          {/* <li>
+            </li>
+            <li>
               <h4>3º Pantalla de feedback</h4>
               <Step3 isSuccess />
               <Step3 />
@@ -103,15 +103,15 @@ class Instructions extends Component {
                 tanto un KO como un OK, de manera dinamica, de manera que, sea
                 parametrizable en base al resultado de la creación.
               </h5>
-            </li> */}
-          {/* </ul> */}
-          {/* <h3>Requisitos</h3>
+            </li>
+          </ul>
+          <h3>Requisitos</h3>
           <p>
             Los requisitos que se van a tener en cuenta para la evaluación de la
             prueba son:
-          </p> */}
-          {/* <ul> */}
-          {/* <li>
+          </p>
+          <ul>
+            <li>
               Tiene que estar maquetada semánticamente correcta, con etiquetas
               de HTML5 y layouts actuales.
             </li>
@@ -119,22 +119,22 @@ class Instructions extends Component {
               Se puede renombrar, quitar o añadir cualquier recurso, fichero,
               asset que se crea necesario para mejorar o embellecer la prueba.
             </li>
-            <li>La iconografia puede obtenerse de donde guste</li> */}
-          {/* <li> */}
-          {/* Nice to haves a tener en cuenta */}
-          {/* <ul> */}
-          {/* <li>Estructura del proyecto</li>
+            <li>La iconografia puede obtenerse de donde guste</li>
+            <li>
+              Nice to haves a tener en cuenta
+              <ul>
+                <li>Estructura del proyecto</li>
                 <li>Control de la UI durante las llamadas asíncronas</li>
                 <li>Generalización de componentes y utilidades</li>
                 <li>Uso de buenas practicas de programación</li>
-                <li>Metodologias en hojas de estilos</li> */}
-          {/* <li>Sistema de traducción</li> */}
-          {/* <li>Rendimiento</li> */}
-          {/* </ul> */}
-          {/* </li> */}
-          {/* </ul> */}
-          {/* <h3>Recursos</h3> */}
-          {/* <p>
+                <li>Metodologias en hojas de estilos</li>
+                <li>Sistema de traducción</li>
+                <li>Rendimiento</li>
+              </ul>
+            </li>
+          </ul>
+          <h3>Recursos</h3>
+          <p>
             Se provee un proyecto vacío donde se espera que el desarrollador
             complete la lógica. Ademas se provee de un base.scss con los colores
             corporativos e imágenes para completar los flujos. Todo esto es de
@@ -151,14 +151,7 @@ class Instructions extends Component {
           <h4 className="bye-bye">
             Sin más que añadir, ¡mucha suerte! y cualquier duda, mandanos tus
             dudas al correo que te han dado. =)
-          </h4> */}
-          <ul>
-            <li>Sistema de traducción</li>
-            <li>Responsive</li>
-            <li>Test</li>
-            <li></li>
-            <li></li>
-          </ul>
+          </h4>
         </main>
       </div>
     );

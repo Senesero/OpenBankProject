@@ -17,6 +17,7 @@ import Text from "../../components/Text/Text";
 import { theme } from "../../utils/theme/theme";
 import { Line } from "../../components/Line/Line.styles";
 import { Snackbar } from "@material-ui/core";
+// import { useTranslation } from "react-i18next";
 
 interface Props {
   steps: Step[];
@@ -33,6 +34,7 @@ export const WizardComponent: React.FC<Props> = ({
   updateLoading,
   apiResponseRequest,
 }) => {
+  // const { t } = useTranslation();
   const [currrentStep, setCurrrentStep] = React.useState(0);
   const [showErrorSnackbar, setShowErrorSnackbar] = React.useState(false);
   const [errorSnackbar, setErrorSnackbar] = React.useState("");

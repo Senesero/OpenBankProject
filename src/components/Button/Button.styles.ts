@@ -13,7 +13,8 @@ export const ButtonRaw = styled.input<Props>`
   ` : `
     cursor: pointer;
   `}
-  
+
+  text-align: center;  
   border: none;
 
   margin: 10px 10px;

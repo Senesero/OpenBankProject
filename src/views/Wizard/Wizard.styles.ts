@@ -54,6 +54,10 @@ export const Triangle = styled.div`
 export const ContentWwapper = styled.div`
     background-color: ${theme.colors.white};
     padding: 30px 80px;
+
+    ${() => theme.media.onMobile`
+        padding: 20px;
+    `}
 `
 
 export const FooterWrapper = styled.div`

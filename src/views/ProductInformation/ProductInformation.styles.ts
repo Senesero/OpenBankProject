@@ -1,7 +1,15 @@
 import styled from 'styled-components'
+import { theme } from '../../utils/theme/theme'
 
 export const IconsWrapper = styled.div`
-  display: flex;
   width: 100%;
-  justify-content: space-between;
+
+  ${() => theme.media.onDesktop`
+    display: flex;
+    justify-content: space-between;
+  `}
+
+  ${() => theme.media.onMobile`
+    display: block;
+  `}
 `

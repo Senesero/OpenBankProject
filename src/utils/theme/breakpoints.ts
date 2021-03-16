@@ -3,5 +3,5 @@ export interface Breakpoints {
 }
 
 export const breakpoints: Breakpoints = {
-  desktop: 550,
+  desktop: 600,
 }

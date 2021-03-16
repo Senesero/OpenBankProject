@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '../../utils/theme/theme'
 
 export const IconsWrapper = styled.div`
   display: flex;
@@ -8,4 +9,8 @@ export const IconsWrapper = styled.div`
 
 export const PasswordWrapper = styled.div`
   display: flex;
+
+  ${() => theme.media.onMobile`
+    display: block;
+  `}
 `

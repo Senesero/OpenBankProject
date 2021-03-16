@@ -16,7 +16,6 @@ export const TextWrapper = styled.div`
 
 export const LabelWrapper = styled.div`
   display: flex;
-  height: 30px;
   align-items: center;
 `
 

@@ -7,6 +7,8 @@ import { applyMiddleware, compose, createStore } from "redux";
 import { Provider } from "react-redux";
 import { reducers } from "./reducers";
 import reduxThunk from "redux-thunk";
+import "./i18n";
+import { BreakpointsProvider } from "./components/Breakpoint";
 
 const composeEnhancers =
   window["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] || compose;
@@ -17,11 +19,13 @@ const store = createStore(
 );
 
 ReactDOM.render(
-  <Provider store={store}>
-    <>
-      <App />
-    </>
-  </Provider>,
+  <React.Suspense fallback="loading">
+    <Provider store={store}>
+      <BreakpointsProvider>
+        <App />
+      </BreakpointsProvider>
+    </Provider>
+  </React.Suspense>,
   document.getElementById("root")
 );
 

@@ -5,7 +5,7 @@ import "./App.styles.ts";
 import { Step } from "./model/models";
 import { Feedback } from "./views/Feedback/FeedbackContainer";
 import { Form } from "./views/Form/FormContainer";
-import Instructions from "./views/Instructions";
+// import Instructions from "./views/Instructions";
 import { ProductInformation } from "./views/ProductInformation/ProductInformationContainer";
 import { Wizard } from "./views/Wizard/WizardContainer";
 
@@ -32,7 +32,7 @@ const App: React.FC = () => {
     <AppWrapper>
       <AppContent>
         <Wizard steps={steps} />
-        <Instructions />
+        {/* <Instructions /> */}
       </AppContent>
     </AppWrapper>
   );
