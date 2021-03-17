@@ -17,9 +17,8 @@ import Text from "../../components/Text/Text";
 import { theme } from "../../utils/theme/theme";
 import { Line } from "../../components/Line/Line.styles";
 import { Snackbar } from "@material-ui/core";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as actions from "../../redux/actions";
-import { WizardProfileState } from "../../redux/configureStore";
 // import { useTranslation } from "react-i18next";
 
 interface Props {
@@ -32,10 +31,6 @@ export const Wizard: React.FC<Props> = ({ steps }) => {
   const [showErrorSnackbar, setShowErrorSnackbar] = React.useState(false);
   const [errorSnackbar, setErrorSnackbar] = React.useState("");
 
-  const password = useSelector((store: WizardProfileState) => store.password);
-  const acceptConditions = useSelector(
-    (store: WizardProfileState) => store.acceptConditions
-  );
   const dispatch = useDispatch();
 
   const getColor = (index: number): string => {
@@ -54,11 +49,6 @@ export const Wizard: React.FC<Props> = ({ steps }) => {
     }
 
     setShowErrorSnackbar(false);
-  };
-
-  const showSnackbar = (text: string) => {
-    setErrorSnackbar(text);
-    setShowErrorSnackbar(true);
   };
 
   return (
@@ -113,19 +103,8 @@ export const Wizard: React.FC<Props> = ({ steps }) => {
         <Button
           label="Siguiente >"
           onClick={() => {
-            if (currrentStep === 0) {
-              if (!acceptConditions) {
-                return showSnackbar(
-                  "Debes aceptar los términos y condiciones!!"
-                );
-              }
-            } else if (currrentStep === 1) {
-              if (!password) {
-                return showSnackbar("Las contraseñas no son válidas!!");
-              }
-              dispatch(actions.updateLoading(true));
-              dispatch(actions.apiResponseRequest(password));
-            }
+            const onContinue = steps[currrentStep]?.onContinue;
+            onContinue && onContinue();
 
             currrentStep !== steps.length - 1 &&
               setCurrrentStep(currrentStep + 1);

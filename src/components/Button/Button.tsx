@@ -35,7 +35,7 @@ const Button: React.FC<Props> = ({
         onClick(event);
       } else {
         setShowErrorSnackbar &&
-          setShowErrorSnackbar("Las contraseñas son requeridas");
+          setShowErrorSnackbar("Faltan campos requeridos");
       }
     }}
     disabled={disabled}

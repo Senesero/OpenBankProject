@@ -55,6 +55,7 @@ const PasswordField: React.FC<Props> = ({
           type={isShowedPassword ? "text" : "password"}
           maxLength={24}
           required
+          pattern="(?=.*\d)(?=.*[A-Z]).{8,}"
         />
         <IconWrapper onClick={() => setIsShowedPassword(!isShowedPassword)}>
           {isShowedPassword ? <CrossOutEyeIcon /> : <EyeIcon />}

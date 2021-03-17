@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { AppContent, AppWrapper } from "./App.styles";
 
 import "./App.styles.ts";
@@ -8,8 +9,13 @@ import Form from "./views/Form/Form";
 // import Instructions from "./views/Instructions";
 import ProductInformation from "./views/ProductInformation/ProductInformation";
 import { Wizard } from "./views/Wizard/Wizard";
+import * as actions from "./redux/actions";
+import { WizardProfileState } from "./redux/configureStore";
 
 const App: React.FC = () => {
+  const password = useSelector((store: WizardProfileState) => store.password);
+  const dispatch = useDispatch();
+
   const steps: Step[] = [
     {
       step: 1,
@@ -20,6 +26,10 @@ const App: React.FC = () => {
       step: 2,
       title: "Crea tu Password Manager",
       component: <Form />,
+      onContinue: () => {
+        dispatch(actions.updateLoading(true));
+        dispatch(actions.apiResponseRequest(password));
+      },
     },
     {
       step: 3,

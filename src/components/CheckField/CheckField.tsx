@@ -11,7 +11,12 @@ interface Props {
 
 const CheckField: React.FC<Props> = ({ title, onClick, checked }) => (
   <ComponentWrapper>
-    <input type="checkbox" onClick={() => onClick()} checked={checked} />
+    <input
+      type="checkbox"
+      onClick={() => onClick()}
+      checked={checked}
+      required
+    />
     <Text color={theme.colors.darkBlue}>{title}</Text>
   </ComponentWrapper>
 );
