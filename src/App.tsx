@@ -19,12 +19,12 @@ const App: React.FC = () => {
   const steps: Step[] = [
     {
       step: 1,
-      title: "Crea tu Password Manager",
+      title: "wizard.stepTitle",
       component: <ProductInformation />,
     },
     {
       step: 2,
-      title: "Crea tu Password Manager",
+      title: "wizard.stepTitle",
       component: <Form />,
       onContinue: () => {
         dispatch(actions.updateLoading(true));

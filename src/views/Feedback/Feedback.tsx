@@ -9,20 +9,18 @@ import {
   SuccessIcon,
   ErrorIcon,
 } from "./Feedback.styles";
+import { useTranslation } from "react-i18next";
 
 const Feedback: React.FC = () => {
+  const { t } = useTranslation();
   const isLoading = useSelector((store: WizardProfileState) => store.isLoading);
   const apiResponse = useSelector(
     (store: WizardProfileState) => store.apiResponse
   );
 
   const isSuccess = apiResponse === 200;
-  const title = isSuccess
-    ? "¡Tu Password Manager ya está creado!"
-    : "Ha habido un error";
-  const subtitle = isSuccess
-    ? "Contaseña Maestra modificada con éxito. A partir de ahora puedes usar la contraseña para acceder a...."
-    : "No hemos podido modificar tu Contraseña Maestra. Inténtelo más tarde.";
+  const title = isSuccess ? "feedback.success.title" : "feedback.error.title";
+  const subtitle = isSuccess ? "feedback.success.text" : "feedback.error.text";
 
   if (isLoading) {
     return <CircularProgress />;
@@ -33,9 +31,9 @@ const Feedback: React.FC = () => {
       <IconWrapper>{isSuccess ? <SuccessIcon /> : <ErrorIcon />}</IconWrapper>
       <div>
         <Text isSubtitle bold>
-          {title}
+          {t(title)}
         </Text>
-        <Text>{subtitle}</Text>
+        <Text>{t(subtitle)}</Text>
       </div>
     </ContentWrapper>
   );

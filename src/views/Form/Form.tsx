@@ -6,8 +6,10 @@ import Text from "../../components/Text/Text";
 import { PasswordWrapper } from "./Form.styles";
 import { useDispatch } from "react-redux";
 import * as actions from "../../redux/actions";
+import { useTranslation } from "react-i18next";
 
 const Form: React.FC = () => {
+  const { t } = useTranslation();
   const [password, setPassword] = React.useState("");
   const [errorPassword, setErrorPassword] = React.useState("");
   const [confirmationPassword, setConfirmationPassword] = React.useState("");
@@ -22,21 +24,21 @@ const Form: React.FC = () => {
   React.useEffect(() => {
     if (password.length > 0) {
       let withError = false;
-      let error = "La contraseña tiene que contener: ";
+      let error = t("form.inputError.text");
 
       if (password.length < 8) {
         withError = true;
-        error = error + "mínimo 8 caracteres, ";
+        error = error + t("form.inputError.minimumCharacters");
       }
 
       if (!containCapitalLetters(password)) {
         withError = true;
-        error = error + "al menos una mayúscula, ";
+        error = error + t("form.inputError.aCapitalLetter");
       }
 
       if (!containNumber(password)) {
         withError = true;
-        error = error + "al menos un número,";
+        error = error + t("form.inputError.aNumber");
       }
 
       if (withError) {
@@ -57,7 +59,7 @@ const Form: React.FC = () => {
   React.useEffect(() => {
     if (confirmationPassword.length > 0) {
       if (confirmationPassword !== password) {
-        setErrorConfirmationPassword("Las contraseñas no coinciden");
+        setErrorConfirmationPassword(t("form.inputError.notSamePassword"));
         dispatch(actions.updatePassword(""));
       } else {
         setErrorConfirmationPassword("");
@@ -70,34 +72,28 @@ const Form: React.FC = () => {
 
   return (
     <>
-      <Text>
-        En primer lugar, debes crear una contraseña diferente para sus
-        pertenencias electrónicas.
-      </Text>
-      <Text>No podrás recuperar tu contraseña, asi que recuérdala bien.</Text>
+      <Text>{t("form.text1")}</Text>
+      <Text>{t("form.text2")}</Text>
       <PasswordWrapper>
         <PasswordField
-          title="Crea tu Contraseña Maestra"
-          placeholder="Introduce tu contraseña"
+          title={t("form.password.title")}
+          placeholder={t("form.password.placeholder")}
           setInputValue={setPassword}
-          setError={errorPassword}
+          error={errorPassword}
         />
         <PasswordField
-          title="Repite tu Contraseña Maestra"
-          placeholder="Repite tu contraseña"
+          title={t("form.confirmPassword.title")}
+          placeholder={t("form.confirmPassword.placeholder")}
           setInputValue={setConfirmationPassword}
-          setError={errorConfirmationPassword}
+          error={errorConfirmationPassword}
         />
       </PasswordWrapper>
-      <Text>
-        También puedes crear una pista que te ayude a recordar tu contraseña
-        maestra.
-      </Text>
+      <Text>{t("form.text3")}</Text>
       <ClueField
-        title="Crea tu pista para recordar tu contraseña (opcional)"
-        placeholder="Introduce tu pista"
+        title={t("form.clue.title")}
+        placeholder={t("form.clue.placeholder")}
         setInputValue={setClue}
-        tooltipText="Texto de información"
+        tooltipText={t("form.clue.tooltip")}
       />
     </>
   );

@@ -11,20 +11,22 @@ import { ReactComponent as CrossOutEyeIcon } from "../../assets/img/cross-out-ey
 import { theme } from "../../utils/theme/theme";
 import { containCapitalLetters, containNumber } from "../../utils/strings";
 import { Line } from "../Line/Line.styles";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   title: string;
   placeholder?: string;
   setInputValue: (value: string) => void;
-  setError?: string;
+  error?: string;
 }
 
 const PasswordField: React.FC<Props> = ({
   title,
   setInputValue,
   placeholder,
-  setError,
+  error,
 }) => {
+  const { t } = useTranslation();
   const [isShowedPassword, setIsShowedPassword] = React.useState(false);
   const [value, setValue] = React.useState("");
 
@@ -44,10 +46,10 @@ const PasswordField: React.FC<Props> = ({
 
   return (
     <ComponentWrapper>
-      <Text bold>{title}</Text>
+      <Text bold>{t(title)}</Text>
       <InputWrapper>
         <InputRaw
-          placeholder={placeholder}
+          placeholder={placeholder && t(placeholder)}
           onChange={(event) => {
             setValue(event.target.value);
             setInputValue(event.target.value);
@@ -62,9 +64,9 @@ const PasswordField: React.FC<Props> = ({
         </IconWrapper>
       </InputWrapper>
       <Line color={getLineColor()} width={50} height={5} padding={1} />
-      {setError && (
+      {error && (
         <Text color={theme.colors.red} bold>
-          {setError}
+          {error}
         </Text>
       )}
     </ComponentWrapper>

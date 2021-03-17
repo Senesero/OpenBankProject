@@ -8,8 +8,10 @@ import CheckField from "../../components/CheckField/CheckField";
 import { useDispatch, useSelector } from "react-redux";
 import { WizardProfileState } from "../../redux/configureStore";
 import * as actions from "../../redux/actions";
+import { useTranslation } from "react-i18next";
 
 const ProductInformation: React.FC = () => {
+  const { t } = useTranslation();
   const acceptConditions = useSelector(
     (store: WizardProfileState) => store.acceptConditions
   );
@@ -18,9 +20,9 @@ const ProductInformation: React.FC = () => {
   const subtitleSection = (subTitle: string, text: string) => (
     <div>
       <Text isSubtitle bold>
-        {subTitle}
+        {t(subTitle)}
       </Text>
-      <Text>{text}</Text>
+      <Text>{t(text)}</Text>
     </div>
   );
 
@@ -29,23 +31,23 @@ const ProductInformation: React.FC = () => {
       <IconsWrapper>
         <IconBlock
           icon={<GroupIcon />}
-          text="Guarda aquí todas tus contraseñas, datos o cualquier información, olvida las notas de papel y las aplicaciones no protegidas"
+          text={t("productInformation.textBlock1")}
         />
         <IconBlock
           icon={<GroupThreeIcon />}
-          text="Crea tu clave maestra: solo tú podrás acceder a tus secretos con ella."
+          text={t("productInformation.textBlock2")}
         />
       </IconsWrapper>
       {subtitleSection(
-        "Cómo funciona",
-        "En primer lugar, debes crear una contraseña diferente para sus pertenencias electrónicas. No podrás recuperar tu contraseña, así que recuérdala bien"
+        "productInformation.block1.title",
+        "productInformation.block1.text"
       )}
       {subtitleSection(
-        "Qué datos puedes guardar",
-        "En primer lugar, debes crear una contraseña diferente para sus pertenencias electrónicas. No podrás recuperar tu contraseña, así que recuérdala bien."
+        "productInformation.block2.title",
+        "productInformation.block2.text"
       )}
       <CheckField
-        title="Es mayor de eadad y que acepta que tratemos sus datos según la politica de protección de datos."
+        title="productInformation.checkboxText"
         onClick={() =>
           dispatch(actions.updateAcceptConditions(!acceptConditions))
         }

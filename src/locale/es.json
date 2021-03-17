@@ -1,3 +1,59 @@
 {
-    "title": "Crea tu Password Manager"
+    "translation": {
+        "wizard": {
+            "stepTitle": "Crea tu Password Manager",
+            "restartProcess": "Reiniciar Proceso",
+            "cancel": "Cancelar",
+            "next": "Siguiente >"
+        },
+        "productInformation": {
+            "textBlock1": "Guarda aquí todas tus contraseñas, datos o cualquier información, olvida las notas de papel y las aplicaciones no protegidas",
+            "textBlock2": "Crea tu clave maestra: solo tú podrás acceder a tus secretos con ella.",
+            "block1": {
+                "title": "Cómo funciona",
+                "text": "En primer lugar, debes crear una contraseña diferente para sus pertenencias electrónicas. No podrás recuperar tu contraseña, así que recuérdala bien"
+            },
+            "block2": {
+                "title": "Qué datos puedes guardar",
+                "text": "En primer lugar, debes crear una contraseña diferente para sus pertenencias electrónicas. No podrás recuperar tu contraseña, así que recuérdala bien."
+            },
+            "checkboxText": "Es mayor de eadad y que acepta que tratemos sus datos según la politica de protección de datos."
+        },
+        "form": {
+            "inputError": {
+                "text": "La contraseña tiene que contener: ",
+                "minimumCharacters": "mínimo 8 caracteres, ",
+                "aCapitalLetter": "al menos una mayúscula, ",
+                "aNumber": "al menos un número,",
+                "notSamePassword": "Las contraseñas no coinciden"
+            },
+            "text1": "En primer lugar, debes crear una contraseña diferente para sus pertenencias electrónicas.",
+            "text2": "No podrás recuperar tu contraseña, asi que recuérdala bien.",
+            "text3": "También puedes crear una pista que te ayude a recordar tu contraseña maestra.",
+            "password": {
+                "title": "Crea tu Contraseña Maestra",
+                "placeholder": "Introduce tu contraseña"
+            },
+            "confirmPassword": {
+                "title": "Repite tu Contraseña Maestra",
+                "placeholder": "Repite tu contraseña"
+            },
+            "clue": {
+                "title": "Crea tu pista para recordar tu contraseña (opcional)",
+                "placeholder": "Introduce tu pista",
+                "tooltip": "Texto de información"
+            }
+        },
+        "feedback": {
+            "success": {
+                "title": "¡Tu Password Manager ya está creado!",
+                "text": "Contaseña Maestra modificada con éxito. A partir de ahora puedes usar la contraseña para acceder a...."
+            },
+            "error": {
+                "title": "Ha habido un error",
+                "text": "No hemos podido modificar tu Contraseña Maestra. Inténtelo más tarde."
+            }
+        },
+        "requiredError": "Faltan campos requeridos"
+    }
 }

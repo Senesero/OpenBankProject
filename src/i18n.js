@@ -1,28 +1,20 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
 
 // import { en } from './locale'
-// import { es } from './locale'
-
-const resources = {
-  es: {
-    title: "Crea tu Password Manager"
-  },
-  en: {
-    title: "Crea tu Password Manager"
-  },
-};
+import { es } from './locale'
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
-    resources,
-    lng: "en",
-
-    keySeparator: false, // we do not use keys in form messages.welcome
+    resources: {
+      es
+    },
+    lng: "es",
+    fallbackLng: "es",
 
     interpolation: {
-      escapeValue: false // react already safes from xss
+      escapeValue: false
     }
   });
 

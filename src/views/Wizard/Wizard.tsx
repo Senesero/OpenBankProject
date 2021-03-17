@@ -19,15 +19,14 @@ import { Line } from "../../components/Line/Line.styles";
 import { Snackbar } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import * as actions from "../../redux/actions";
-// import { useTranslation } from "react-i18next";
-
+import { useTranslation } from "react-i18next";
 interface Props {
   steps: Step[];
 }
 
 export const Wizard: React.FC<Props> = ({ steps }) => {
-  // const { t } = useTranslation();
-  const [currrentStep, setCurrrentStep] = React.useState(0);
+  const { t } = useTranslation();
+  const [currrentStep, setCurrrentStep] = React.useState(1);
   const [showErrorSnackbar, setShowErrorSnackbar] = React.useState(false);
   const [errorSnackbar, setErrorSnackbar] = React.useState("");
 
@@ -79,7 +78,7 @@ export const Wizard: React.FC<Props> = ({ steps }) => {
       <ContentWwapper>
         {steps[currrentStep].title && (
           <Text isTitle bold inlineColor={theme.colors.lightBlue}>
-            {steps[currrentStep].title}
+            {t(steps[currrentStep].title)}
           </Text>
         )}
         {steps[currrentStep].component}
@@ -87,7 +86,9 @@ export const Wizard: React.FC<Props> = ({ steps }) => {
       <FooterWrapper>
         <Button
           label={
-            currrentStep === steps.length - 1 ? "Reiniciar Proceso" : "Cancelar"
+            currrentStep === steps.length - 1
+              ? "wizard.restartProcess"
+              : "wizard.cancel"
           }
           onClick={() => {
             if (currrentStep === steps.length - 1) {
@@ -101,7 +102,7 @@ export const Wizard: React.FC<Props> = ({ steps }) => {
           secondary
         />
         <Button
-          label="Siguiente >"
+          label="wizard.next"
           onClick={() => {
             const onContinue = steps[currrentStep]?.onContinue;
             onContinue && onContinue();
