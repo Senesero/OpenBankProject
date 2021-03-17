@@ -3,20 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { applyMiddleware, compose, createStore } from "redux";
 import { Provider } from "react-redux";
-import { reducers } from "./reducers";
-import reduxThunk from "redux-thunk";
 import "./i18n";
 import { BreakpointsProvider } from "./components/Breakpoint";
-
-const composeEnhancers =
-  window["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] || compose;
-
-const store = createStore(
-  reducers,
-  composeEnhancers(applyMiddleware(reduxThunk))
-);
+import store from "./redux/configureStore";
 
 ReactDOM.render(
   <React.Suspense fallback="loading">

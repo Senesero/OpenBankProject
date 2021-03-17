@@ -5,16 +5,16 @@ import { ReactComponent as GroupIcon } from "../../assets/img/group.svg";
 import { ReactComponent as GroupThreeIcon } from "../../assets/img/group-3.svg";
 import IconBlock from "./IconBlock/IconBlock";
 import CheckField from "../../components/CheckField/CheckField";
+import { useDispatch, useSelector } from "react-redux";
+import { WizardProfileState } from "../../redux/configureStore";
+import * as actions from "../../redux/actions";
 
-interface Props {
-  acceptConditions: boolean;
-  updateAcceptConditions: (acceptConditions: boolean) => void;
-}
+const ProductInformation: React.FC = () => {
+  const acceptConditions = useSelector(
+    (store: WizardProfileState) => store.acceptConditions
+  );
+  const dispatch = useDispatch();
 
-const ProductInformationComponent: React.FC<Props> = ({
-  acceptConditions,
-  updateAcceptConditions,
-}) => {
   const subtitleSection = (subTitle: string, text: string) => (
     <div>
       <Text isSubtitle bold>
@@ -46,10 +46,13 @@ const ProductInformationComponent: React.FC<Props> = ({
       )}
       <CheckField
         title="Es mayor de eadad y que acepta que tratemos sus datos según la politica de protección de datos."
-        onClick={() => updateAcceptConditions(!acceptConditions)}
+        onClick={() =>
+          dispatch(actions.updateAcceptConditions(!acceptConditions))
+        }
+        checked={acceptConditions}
       />
     </>
   );
 };
 
-export default ProductInformationComponent;
+export default ProductInformation;

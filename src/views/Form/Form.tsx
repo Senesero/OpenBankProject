@@ -4,12 +4,10 @@ import ClueField from "../../components/ClueField/ClueField";
 import PasswordField from "../../components/PasswordField/PasswordField";
 import Text from "../../components/Text/Text";
 import { PasswordWrapper } from "./Form.styles";
+import { useDispatch } from "react-redux";
+import * as actions from "../../redux/actions";
 
-interface Props {
-  updatePassword: (password: string) => void;
-}
-
-const FormComponent: React.FC<Props> = ({ updatePassword }) => {
+const Form: React.FC = () => {
   const [password, setPassword] = React.useState("");
   const [errorPassword, setErrorPassword] = React.useState("");
   const [confirmationPassword, setConfirmationPassword] = React.useState("");
@@ -18,6 +16,8 @@ const FormComponent: React.FC<Props> = ({ updatePassword }) => {
     setErrorConfirmationPassword,
   ] = React.useState("");
   const [clue, setClue] = React.useState("");
+
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
     if (password.length > 0) {
@@ -41,16 +41,16 @@ const FormComponent: React.FC<Props> = ({ updatePassword }) => {
 
       if (withError) {
         setErrorPassword(error);
-        updatePassword("");
+        dispatch(actions.updatePassword(""));
       } else {
         setErrorPassword("");
         if (!errorConfirmationPassword) {
-          updatePassword(password);
+          dispatch(actions.updatePassword(password));
         }
       }
     } else {
       setErrorPassword("");
-      updatePassword(password);
+      dispatch(actions.updatePassword(password));
     }
   }, [password]);
 
@@ -58,11 +58,11 @@ const FormComponent: React.FC<Props> = ({ updatePassword }) => {
     if (confirmationPassword.length > 0) {
       if (confirmationPassword !== password) {
         setErrorConfirmationPassword("Las contraseñas no coinciden");
-        updatePassword("");
+        dispatch(actions.updatePassword(""));
       } else {
         setErrorConfirmationPassword("");
         if (!errorPassword) {
-          updatePassword(password);
+          dispatch(actions.updatePassword(password));
         }
       }
     }
@@ -103,4 +103,4 @@ const FormComponent: React.FC<Props> = ({ updatePassword }) => {
   );
 };
 
-export default FormComponent;
+export default Form;

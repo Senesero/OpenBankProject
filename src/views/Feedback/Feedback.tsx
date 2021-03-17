@@ -1,6 +1,8 @@
 import { CircularProgress } from "@material-ui/core";
 import React from "react";
+import { useSelector } from "react-redux";
 import Text from "../../components/Text/Text";
+import { WizardProfileState } from "../../redux/configureStore";
 import {
   ContentWrapper,
   IconWrapper,
@@ -8,12 +10,12 @@ import {
   ErrorIcon,
 } from "./Feedback.styles";
 
-interface Props {
-  isLoading: boolean;
-  apiResponse: number;
-}
+const Feedback: React.FC = () => {
+  const isLoading = useSelector((store: WizardProfileState) => store.isLoading);
+  const apiResponse = useSelector(
+    (store: WizardProfileState) => store.apiResponse
+  );
 
-const FeedbackComponent: React.FC<Props> = ({ isLoading, apiResponse }) => {
   const isSuccess = apiResponse === 200;
   const title = isSuccess
     ? "¡Tu Password Manager ya está creado!"
@@ -39,4 +41,4 @@ const FeedbackComponent: React.FC<Props> = ({ isLoading, apiResponse }) => {
   );
 };
 
-export default FeedbackComponent;
+export default Feedback;

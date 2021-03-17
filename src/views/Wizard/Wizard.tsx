@@ -17,27 +17,26 @@ import Text from "../../components/Text/Text";
 import { theme } from "../../utils/theme/theme";
 import { Line } from "../../components/Line/Line.styles";
 import { Snackbar } from "@material-ui/core";
+import { useDispatch, useSelector } from "react-redux";
+import * as actions from "../../redux/actions";
+import { WizardProfileState } from "../../redux/configureStore";
 // import { useTranslation } from "react-i18next";
 
 interface Props {
   steps: Step[];
-  password: string;
-  acceptConditions: boolean;
-  updateLoading: (isLoading: boolean) => void;
-  apiResponseRequest: (password: string) => void;
 }
 
-export const WizardComponent: React.FC<Props> = ({
-  steps,
-  password,
-  acceptConditions,
-  updateLoading,
-  apiResponseRequest,
-}) => {
+export const Wizard: React.FC<Props> = ({ steps }) => {
   // const { t } = useTranslation();
   const [currrentStep, setCurrrentStep] = React.useState(0);
   const [showErrorSnackbar, setShowErrorSnackbar] = React.useState(false);
   const [errorSnackbar, setErrorSnackbar] = React.useState("");
+
+  const password = useSelector((store: WizardProfileState) => store.password);
+  const acceptConditions = useSelector(
+    (store: WizardProfileState) => store.acceptConditions
+  );
+  const dispatch = useDispatch();
 
   const getColor = (index: number): string => {
     if (currrentStep - 1 === index) {
@@ -102,6 +101,7 @@ export const WizardComponent: React.FC<Props> = ({
           }
           onClick={() => {
             if (currrentStep === steps.length - 1) {
+              dispatch(actions.updateAcceptConditions(false));
               setCurrrentStep(0);
             } else {
               currrentStep !== 0 && setCurrrentStep(currrentStep - 1);
@@ -123,9 +123,8 @@ export const WizardComponent: React.FC<Props> = ({
               if (!password) {
                 return showSnackbar("Las contraseñas no son válidas!!");
               }
-
-              updateLoading(true);
-              apiResponseRequest(password);
+              dispatch(actions.updateLoading(true));
+              dispatch(actions.apiResponseRequest(password));
             }
 
             currrentStep !== steps.length - 1 &&
