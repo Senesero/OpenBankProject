@@ -26,7 +26,7 @@ interface Props {
 
 export const Wizard: React.FC<Props> = ({ steps }) => {
   const { t } = useTranslation();
-  const [currrentStep, setCurrrentStep] = React.useState(1);
+  const [currrentStep, setCurrrentStep] = React.useState(0);
   const [showErrorSnackbar, setShowErrorSnackbar] = React.useState(false);
   const [errorSnackbar, setErrorSnackbar] = React.useState("");
 
